@@ -1,5 +1,5 @@
 import Text from "./components/text";
-import TrashIcon from "./assets/icons/trash.svg"
+import TrashIcon from "./assets/icons/trash.svg?react";
 
 export default function App() {
   return (
@@ -14,7 +14,7 @@ export default function App() {
       </div>
 
       <div className="flex gap-1">
-        <img src={TrashIcon} />
+        <TrashIcon className="fill-pink-base"/>
       </div>
     </div>
   );
