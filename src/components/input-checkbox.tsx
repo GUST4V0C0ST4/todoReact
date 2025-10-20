@@ -2,6 +2,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import React from "react"; 
 import CheckIcon from "../assets/icons/check.svg?react";
 import Icon from "./icon";
+import Skeleton from "./skeleton";
 
 export const inputCheckboxWrapperVariants = cva(
   "inline-flex items-center justify-center relative group"
@@ -47,14 +48,21 @@ export const inputCheckboxIconVariants = cva(
 );
 
 interface InputCheckboxProps extends VariantProps<typeof inputCheckboxVariants>, 
- Omit<React.ComponentProps<"input">, "size" | "disabled"> {}
+ Omit<React.ComponentProps<"input">, "size" | "disabled"> {
+    loading?: boolean;
+ }
 
  export default function Inputcheckbox ({
     size,
     disabled,
     className,
+    loading,
     ...props
  }: InputCheckboxProps) {
+    if(loading) {
+        return <Skeleton rounded="sm" />
+    }
+
     return (
     <label className={inputCheckboxWrapperVariants({className})}>
         <input type="checkbox" className={inputCheckboxVariants({size, disabled})} {...props} />
