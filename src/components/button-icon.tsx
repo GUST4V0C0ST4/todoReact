@@ -64,7 +64,10 @@ export default function buttonIcon({
 }: buttonIconProps) {
   if (loading) {
     return (
-      <Skeleton rounded="sm" className={buttonIconVariants({ variant: "none", size, className })} />
+      <Skeleton
+        rounded="sm"
+        className={buttonIconVariants({ variant: "none", size, className })}
+      />
     );
   }
 
