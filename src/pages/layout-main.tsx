@@ -1,21 +1,16 @@
-import Container from "../components/container";
-import { NavLink } from "react-router";
-import Text from "../components/text";
+import { Outlet } from "react-router";
+import Header from "../core-components/header";
+import MainContent from "../core-components/main-content";
+import Footer from "../core-components/footer";
 
 export default function LayoutMain() {
   return (
     <>
-      <Container as="header">Ola Mundo - HEADER</Container>
-      <main>CONTEUDO PRINCIPAL</main>
-      <footer>
-        <nav className="flex items-center justify-center gap-4">
-          <NavLink to="/componentes">
-            <Text variant="body-sm-bold" className="text-gray-300">
-              Componentes
-            </Text>
-          </NavLink>
-        </nav>
-      </footer>
+      <Header />
+      <MainContent>
+        <Outlet />
+      </MainContent>
+      <Footer />
     </>
   );
 }
