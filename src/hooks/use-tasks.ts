@@ -28,5 +28,6 @@ export default function useTasks() {
     createdTasksCount: tasks.filter((task) => task.state === TaskState.Created)
       .length,
     concludedTasksCount: tasks.filter((task) => task.concluded).length,
+    isLoadingTasks,
   };
 }
